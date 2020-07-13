@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem "backports", "3.11.4"
+gem "capybara", "3.13.2"
+gem "cucumber", "3.1.2"
+gem "rspec", "3.8.0"
+gem "selenium-webdriver", "3.141.0"
+gem "site_prism", "3.0.2"
+gem "faker", "1.9.3"
+gem "cpf_faker", "1.3.0"
