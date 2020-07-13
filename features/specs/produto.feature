@@ -21,7 +21,7 @@ Cenário: Tentar avaliar uma oferta com um e-mail inválido
     Mas tentar enviar uma avaliação com um e-mail invalido 
     Então será exibido um alerta no campo e-mail
 
-@teste_produto3 @avaliacao @teste_regressao
+@teste_produto @avaliacao @teste_regressao
 Cenário: Realizar uma avaliação com sucesso 
     Quando ele pesquisar pelo termo "TOTVS Backoffice (Linha Protheus) - TAF Contábil MP"
     Então a pesquisa deverá retornar os produtos relacionados 

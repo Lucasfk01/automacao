@@ -111,6 +111,7 @@ end
 
 Dado("tenta finalizar o cadastro com uma inscrição estadual inválida") do
     Cadastro.pj(@cadastro, @cnpj, @celular_validacao, @proxima_pagina, @email, @razao_social, @nome_fantasia, @estado_ie, @inscricao_estadual, @telefone, @nome, @cpf, @senha, @confirmar_senha)
+    @cadastro.input_inscricao_estadual.set "1234"
     @cadastro.botao_step3.click
   end
   

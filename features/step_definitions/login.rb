@@ -16,10 +16,11 @@ Quando("ele se autenticar com dados válidos") do
   
   Então("o login será realizado com sucesso") do
     @home.wait_until_nome_logado_visible
-    expect(@home.nome_logado.text).to eq "Olá, #{@nome}!"
+    expect(@home).to have_nome_logado
   end
   
   Então("o usuário poderá fazer o logout com sucesso") do
+    @identity.menu_sair.click
     @home.conta[0].click
     @home.logout
     expect(@identity).to have_botao_login
