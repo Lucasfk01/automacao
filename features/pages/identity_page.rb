@@ -3,6 +3,7 @@
     element :input_senha, "#password"
     element :botao_login, ".btn", match: :first
     element :cadastrar, "#signup"
+    element :menu_sair, ".action.switch"
   
     #Alertas login
     def alerta_login_invalido

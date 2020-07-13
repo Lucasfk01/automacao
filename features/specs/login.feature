@@ -10,7 +10,7 @@ Cenário: Tentativa de login com dados inválidos
     Mas tenta se logar com dados inválidos 
     Então será exibido um alerta de dados inválidos
 
-@teste_login2 @dados_login @logout @teste_regressao
+@teste_login2 @dados_login @teste_regressao
 Cenário: Realizar login na Store
     Quando ele se autenticar com dados válidos
     Então o login será realizado com sucesso
