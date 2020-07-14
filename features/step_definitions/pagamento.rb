@@ -1,8 +1,9 @@
-Quando("inserir os dados incorretos do cartão") do
-    @checkout.botao_fechar_pedido.click
-    @identity.input_email.set "lucasfkimura@hotmail.com"
-    @identity.input_senha.set "Luquinhas@01"
-    @identity.input_senha.send_keys :enter
+Quando("ele se autenticar com os dados válidos") do
+  @checkout.botao_fechar_pedido.click
+  Login.login(@identity, @email, @senha, @logar)
+  end
+
+  Quando("inserir os dados incorretos do cartão") do
     @pagamento.numero_cartao.set(@num_cartao_invalido)
     @pagamento.titular_cartao.set(@nome_titular_cartao)
     @pagamento.validade_mes.select(@validade_mes)

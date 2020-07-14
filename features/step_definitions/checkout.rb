@@ -41,3 +41,13 @@ Então("poderá compartilhar o carrinho por e-mail") do
     expect(@checkout).to have_modal_carrinho_enviado
     puts "O carrinho foi enviado para o e-mail #{@email_carrinho}"
 end
+
+Quando("inserir um cupom inválido") do
+  @checkout.abrir_bloco_cupom.click
+  @checkout.input_cupom_de_desconto.set(@cupom_invalido)
+  @checkout.botao_aplicar_desconto.click
+  end
+
+  Então("aperecerá um erro de cupom inválido") do
+  expect(@checkout).to have_mensagem_cupom_invalido
+end
