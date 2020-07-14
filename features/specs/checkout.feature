@@ -29,3 +29,13 @@ Cenário: Compartilhar carrinho por e-mail
     Quando ele acessar a oferta 
     E adicionar o produto ao carrinho 
     Então poderá compartilhar o carrinho por e-mail
+
+@teste_checkout @dados_pagamento @teste_regressao
+Cenário: Inserir cupom de desconto inválido
+    Quando ele pesquisar pelo termo "TOTVS Backoffice (Linha Protheus) - TAF Contábil MP"
+    Então a pesquisa deverá retornar os produtos relacionados
+    Quando ele acessar a oferta
+    E adicionar o produto ao carrinho 
+    Mas inserir um cupom inválido
+    Então aperecerá um erro de cupom inválido
+

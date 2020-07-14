@@ -32,7 +32,7 @@ Before "@dados_usuario" do
     @inscricao = "1234"
   
     # Compartilhar carrinho
-    @email_carrinho = "lucasfkimura@hotmail.com"
+    @email_carrinho = "lucas.kimura@totvs.com.br"
   
     # Validação das mensagens
     @mensagem_erro_cpf_modal = "CPF NÃO É VÁLIDO!"

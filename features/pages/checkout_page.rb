@@ -7,6 +7,7 @@ class CheckoutPage < SitePrism::Page
     element :modal_validar_numero, "#modal-validation-phones-contact-phone"
     element :celular_validado, "#celular1"
     element :celular_contato, "#celular2"
+    element :botao_fechar_pedido2, "#proceed-to-checkout"
   
     def btn_proximo
       click_button "Próximo"
@@ -19,6 +20,7 @@ class CheckoutPage < SitePrism::Page
     element :botao_aplicar_desconto, "[value='Aplicar']"
     element :botao_cancelar_cupom, "[value='Cancelar Cupom']"
     element :validacao_cupom, ".discount > .mark"
+    element :mensagem_cupom_invalido, "[data-ui-id='message-error']"
   
     # Compartilhar carrinho
     element :compartilhar_carrinho, "#share_cart_button"

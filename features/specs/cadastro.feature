@@ -34,12 +34,12 @@ Cenário: Tentativa de cadastro com e-mail inválido
     Mas tenta finalizar o cadastro com um e-mail inválido
     Então será exibido um alerta de erro para o e-mail
 
-@teste_cadastro6 @dados_usuario @teste_regressao
+@teste_cadastro6 @dados_usuario 
 Cenário: Tentativa de cadastro com e-mail já utilizado
     Mas tenta finalizar o cadastro com um e-mail já utilizado
     Então será exibido um alerta de erro informando que o e-mail já existe
 
-@teste_cadastro7 @dados_usuario @teste_regressao
+@teste_cadastro7 @dados_usuario 
 Cenário: Tentativa de cadastro para menores de 18 anos
     Mas tenta finalizar o cadastro com uma data de nascimento inválida
     Então será exibido um alerta de erro informando que somente maiores podem se cadastrar
