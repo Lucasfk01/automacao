@@ -58,4 +58,8 @@ class ProdutoPage < SitePrism::Page
     def eleve_gestao_basico_mensal
       find("h2", exact_text: "Eleve Gestão - Básico (Mensal)").click
     end
+
+    def eleve_saude_online
+      find("h2", exact_text: "Eleve Saúde Online - 1 Usuário").click
+    end
 end

@@ -23,10 +23,18 @@ class PagamentoPage < SitePrism::Page
     #tela de sucesso
     element :visualizar_pedido, ".checkout-success"
     element :numero_pedido, ".order-number"
+    element :sucesso_compra, "[data-ui-id='page-title-wrapper']"
 
     #Mensagem cartão inválido
     element :mensagem_cartao_invalido, "[data-ui-id='checkout-cart-validationmessages-message-error']"
-  
+
+    #Elementos do cartão
+    element :numero_cartao2, "[name='payment[cc_number_mensalidade]']"
+    element :titular_cartao2, "[name='payment[cc_owner_mensalidade]']"
+    element :validade_mes2, "select[name='payment[cc_exp_month_mensalidade]']"
+    element :validade_ano2, "select[name='payment[cc_exp_year_mensalidade]']"
+    element :cod_de_seguranca2, "[name='payment[cc_cid_mensalidade]']"
+
     def finalizar_pedido
       click_button "Finalizar Pedido"
     end
