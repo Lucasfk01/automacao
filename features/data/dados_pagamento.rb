@@ -1,7 +1,7 @@
 Before "@dados_pagamento" do
     @numero_cartao_credito = "4111111111111111"
     @num_cartao_credito_visa = "4012888888881881"
-    @num_cartao_credito_master = "5111111111111100"
+    @num_cartao_credito_master = "5555555555555557"
     @num_cartao_credito_american = "371449635398431"
     @num_cartao_invalido = "123"
     @nome_titular_cartao = Faker::GreekPhilosophers.name

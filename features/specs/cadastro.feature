@@ -60,7 +60,7 @@ Cenário: Cadastrar um usuário PF com sucesso sem digitar seu endereço
     Mas não digitar o endereço
     Então o usuário será cadastrado com sucesso
 
-@teste_cadastro @dados_usuario @teste_regressao @12
+@teste_cadastro2 @dados_usuario @teste_regressao @12
 Cenário: Cadastrar um usuário PF com sucesso 
     Quando digitar os dados solicitados para cadastro de PF
     E inserir o seu endereço

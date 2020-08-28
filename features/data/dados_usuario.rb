@@ -5,7 +5,7 @@ Before "@dados_usuario" do
     @sobrenome = Faker::Name.last_name
     @cpf = Faker::CPF.numeric
     @cpf_invalido = "12345678900"
-    @cpf_cadastrado = "49795711822"
+    @cpf_cadastrado = "53252848350"
     @cnpj = Faker::CNPJ.numeric
     @cnpj_invalido = "11111111111111"
     @celular_validacao = "11988428756"
@@ -23,7 +23,7 @@ Before "@dados_usuario" do
     @senha_invalida = "Totvs@000"
     @token_invalido = "99999"
     @cep = "05351-035"
-    @numero = "152"
+    @numero = "123"
     @razao_social = Faker::Company.name
     @nome_fantasia = @razao_social
     @responsavel = @nome
