@@ -1,6 +1,7 @@
 Quando("tentar enviar uma avaliação do produto com os campos em branco") do
-    @produto.wait_until_resultado_avaliacao_visible
-    @produto.botao_enviar_avaliacao.click
+  @produto.wait_until_resultado_avaliacao_visible
+  @produto.botao_avaliar.click  
+  @produto.botao_enviar_avaliacao.click
   end
   
   Então("será exibido os alertas em todos os campos") do
@@ -8,7 +9,10 @@ Quando("tentar enviar uma avaliação do produto com os campos em branco") do
 end
 
 Quando("tentar enviar uma avaliação com um e-mail invalido") do
-    Avaliacao.avaliacao(@produto, @avaliacao, @nome, "emaildetestes", @titulo, @review, @enviar_avaliacao)
+  @produto.wait_until_resultado_avaliacao_visible
+  @produto.botao_avaliar.click  
+  @produto.botao_enviar_avaliacao.click  
+  Avaliacao.avaliacao(@produto, @avaliacao, @nome, "emaildetestes", @titulo, @review, @enviar_avaliacao)
   end
   
   Então("será exibido um alerta no campo e-mail") do
@@ -16,7 +20,10 @@ Quando("tentar enviar uma avaliação com um e-mail invalido") do
 end
 
 Quando("realizar uma avaliação com dados válidos") do
-    Avaliacao.avaliacao(@produto, @avaliacao, @nome, @email, @titulo, @review, @enviar_avaliacao)
+  @produto.wait_until_resultado_avaliacao_visible
+  @produto.botao_avaliar.click  
+  @produto.botao_enviar_avaliacao.click 
+  Avaliacao.avaliacao(@produto, @avaliacao, @nome, @email, @titulo, @review, @enviar_avaliacao)
   end
   
   Então("será exibida uma mensagem de sucesso") do
@@ -38,23 +45,22 @@ Quando("ele acessar a oferta do LED") do
   end
   
   Então("serão exibidos os alertas nos campos em branco do formulário") do
-    expect(@produto).to have_alerta_campos_obrigatorios(:count => 10)
+    expect(@produto).to have_alerta_campos_obrigatorios
 end
 
 Quando("tentar submeter o formulário com dados inválidos") do
-    Lead.lead_pf(@produto, @nome, @cpf, @email, @telefone, @assunto)
+    Lead.lead_pf(@produto, @nome, @cpf, @email_errado, @telefone, @telefone_celular, @assunto)
     @produto.botao_enviar_lead.click
   end
   
   Então("serão exibidos os alertas nos campos inválidos do formulário") do
-    expect(@produto).to have_alerta_campos_obrigatorios(:count => 2)
+    expect(@produto).to have_erro_email_lead
 end
 
-Quando("preencher os dados solicitados de PF") do
-    Lead.lead_pf(@produto, @nome, @cpf, @email, @telefone, @assunto)
-    @produto.numero_lead.set "(11)99842-8756"
-    @produto.botao_enviar_lead.click
-  end
+Quando("preencher os dados solicitados de PJ") do
+  Lead.lead_pj(@produto, @nome, @cnpj, @email, @telefone, @telefone_celular, @assunto)
+  @produto.botao_enviar_lead.click
+end
   
   Então("o formulário será enviado com sucesso") do
     @produto.wait_until_botao_confirmar_modal_visible
@@ -62,9 +68,5 @@ Quando("preencher os dados solicitados de PF") do
     expect(@produto.alerta_obrigado_lead.text).to eq @alerta_obrigado_lead_texto
 end
 
-Quando("preencher os dados solicitados de PJ") do
-    Lead.lead_pj(@produto, @nome, @cnpj, @email, @telefone, @assunto)
-    @produto.numero_lead.set "(11)99842-8756"
-    @produto.botao_enviar_lead.click
-end
+
   

@@ -4,6 +4,7 @@ Dado("acessa a área de cadastro") do
   
   Dado("tenta finalizar o cadastro setup {int} com dados em branco") do |int|
     @cadastro.wait_until_botao_step2_visible
+    @cadastro.autorizacao_sms.click
     @cadastro.botao_step2.click
   end
   
@@ -24,6 +25,7 @@ end
 Dado("tenta finalizar o cadastro com um telefone inválido") do
     Helpers.set_mask @cadastro.input_cpf_cnpj, @cpf
     Helpers.set_mask @cadastro.celular_validacao, @celular_invalido
+    @cadastro.autorizacao_sms.click
     @cadastro.botao_step2.click
   end
   
@@ -42,7 +44,7 @@ Dado("tenta finalizar o cadastro com um CPF já utilizado") do
 end
 
 Dado("tenta finalizar o cadastro com um e-mail inválido") do
-    Cadastro.pf(@cadastro, @cpf, @celular_validacao, @proxima_pagina, @email_invalido, @nome, @sobrenome, @telefone, @nascimento, @senha, @confirmar_senha)
+    Cadastro.pf(@cadastro, @cpf, @celular_validacao, @proxima_pagina, @email_invalido, @nome, @sobrenome, @telefone, @nascimento, @senha, @confirmar_senha, @autorizacao_sms)
     @cadastro.botao_step3.click
   end
   
@@ -51,12 +53,16 @@ Dado("tenta finalizar o cadastro com um e-mail inválido") do
 end
 
 Dado("tenta finalizar o cadastro com um e-mail já utilizado") do
-    Cadastro.pf(@cadastro, @cpf, @celular_validacao, @proxima_pagina, @email_utilizado, @nome, @sobrenome, @telefone, @nascimento, @senha, @confirmar_senha)
+    Cadastro.pf(@cadastro, @cpf, @celular_validacao, @proxima_pagina, @email_utilizado, @nome, @sobrenome, @telefone, @nascimento, @senha, @confirmar_senha, @autorizacao_sms)
     @cadastro.botao_step3.click
+    @cadastro.cep.set @cep
+    sleep 2
+    @cadastro.numero.set @numero
+    @cadastro.botao_criar_conta.click
   end
   
   Então("será exibido um alerta de erro informando que o e-mail já existe") do
-    expect(@cadastro).to have_alerta_campos_obrigatorios(:count => 2)
+    expect(@cadastro).to have_erro_email_utilizado(:count => 2)
 end
 
 Dado("tenta finalizar o cadastro com uma senha inválida") do
@@ -78,7 +84,7 @@ Dado("tenta finalizar o cadastro com um token inválido") do
 end
 
 Quando("digitar os dados solicitados para cadastro de PF") do
-    Cadastro.pf(@cadastro, @cpf, @celular_validacao, @proxima_pagina, @email, @nome, @sobrenome, @telefone, @nascimento, @senha, @confirmar_senha)
+    Cadastro.pf(@cadastro, @cpf, @celular_validacao, @proxima_pagina, @email, @nome, @sobrenome, @telefone, @nascimento, @senha, @confirmar_senha, @autorizacao_sms)
     @cadastro.botao_step3.click
   end
   
@@ -120,6 +126,6 @@ Dado("tenta finalizar o cadastro com uma inscrição estadual inválida") do
 end
 
 Quando("digitar os dados solicitados para cadastro de PJ") do
-    Cadastro.pj(@cadastro, @cnpj, @celular_validacao, @proxima_pagina, @email, @razao_social, @nome_fantasia, @estado_ie, @inscricao_estadual, @telefone, @nome, @cpf, @senha, @confirmar_senha)
+    Cadastro.pj(@cadastro, @cnpj, @celular_validacao, @proxima_pagina, @email, @razao_social, @nome_fantasia, @estado_ie, @inscricao_estadual, @telefone, @nome, @cpf, @senha, @confirmar_senha, @autorizacao_sms)
     @cadastro.botao_step3.click
 end

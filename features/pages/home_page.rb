@@ -1,5 +1,5 @@
 class HomePage < SitePrism::Page
-    set_url "https://mirror.totvs.store"
+    set_url "https://dev.totvs.store"
 
     element :header_topo, ".header .links li"
     element :logo, ".logo"
