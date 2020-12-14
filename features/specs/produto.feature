@@ -48,15 +48,6 @@ Cenário: Solicitar contato LEAD com dados inválidos
     Então serão exibidos os alertas nos campos inválidos do formulário
 
 @teste_produto @lead @teste_regressao
-Cenário: Solicitar contato LEAD com sucesso PF
-    Quando ele pesquisar pelo termo "Plataforma de Integração by Digibee"
-    Então a pesquisa deverá retornar os produtos relacionados
-    Quando ele acessar a oferta do LED
-    E solicitar o contato
-    E preencher os dados solicitados de PF
-    Então o formulário será enviado com sucesso
-
-@teste_produto @lead @teste_regressao
 Cenário: Solicitar contato LED com sucesso PJ
     Quando ele pesquisar pelo termo "Plataforma de Integração by Digibee"
     Então a pesquisa deverá retornar os produtos relacionados

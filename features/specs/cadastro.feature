@@ -76,7 +76,7 @@ Cenário: Tentativa de cadastro com inscrição estadual inválida
     Mas tenta finalizar o cadastro com uma inscrição estadual inválida
     Então será exibido um alerta de erro para a inscrição estadual
 
-@teste_cadastro @dados_usuario @teste_regressao 
+@teste_cadastro3 @dados_usuario @teste_regressao 
 Cenário: Cadastrar um usuário PJ com sucesso 
     Quando digitar os dados solicitados para cadastro de PJ
     E inserir o seu endereço

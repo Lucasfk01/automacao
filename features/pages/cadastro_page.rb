@@ -27,6 +27,8 @@ class CadastroPage < SitePrism::Page
     element :input_site, "#site"
     element :check_isento, "#document_two_na"
     element :input_inscricao_estadual, "#document_two"
+    element :autorizacao_sms, "#autorizacao_sms"
+    element :erro_email_utilizado, "[data-ui-id='message-error']"
   
     def alerta_cadastro_sucesso
       assert_text("Obrigado por registrar-se com TOTVS Store.")

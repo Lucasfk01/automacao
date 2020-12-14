@@ -1,5 +1,5 @@
 Before "@dados_login" do
-    @email = "germanfisher@mailinator.com"
+    @email = "olinkling@mailinator.com"
     @senha = "Totvs@123"
     @nome = "Lucas"
   

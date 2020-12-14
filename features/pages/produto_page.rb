@@ -5,6 +5,7 @@ class ProdutoPage < SitePrism::Page
     element :quantidade_carrinho, ".counter-number"
   
     # Elementos avaliação
+    element :botao_avaliar, ".action .add"
     element :resultado_avaliacao, ".rating-result"
     elements :bloco_avaliacao, "#customer-reviews"
     element :input_nota_avaliacao, "#Nota_1_label"
@@ -13,6 +14,8 @@ class ProdutoPage < SitePrism::Page
     element :input_titulo, "#summary_field"
     element :input_review, "#review_field"
     element :botao_enviar_avaliacao, ".submit"
+    
+    
     elements :alerta_campos_obrigatorios, ".mage-error"
     element :mensagem_avaliacao_sucesso, ".message-success"
   
@@ -28,11 +31,14 @@ class ProdutoPage < SitePrism::Page
     element :campo_cpf_cnpj, "#lead-cpfcpnj"
     element :campo_email, "#lead-email"
     element :campo_telefone, "#lead-phone"
+    element :campo_telefone_celular, "#lead-mobilephone"
     element :campo_assunto, "#lead-comment"
     element :botao_confirmar_modal, ".action-primary"
     element :alerta_sucesso_lead, ".modal-title"
     element :alerta_obrigado_lead, ".modal-content", match: :first
     element :numero_lead, "#lead-mobilephone"
+    element :erro_lead, "#lead-name-error"
+    element :erro_email_lead, "#lead-email-error"
   
     #Lista de Produtos
     def treinamento_taf

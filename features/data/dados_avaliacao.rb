@@ -10,7 +10,9 @@ Before "@avaliacao" do
     @cpf = Faker::CPF.numeric
     @cnpj = Faker::CNPJ.numeric
     @email = @nome.downcase + "@mailinator.com"
+    @email_errado = "emailteste"
     @telefone = "11999999999"
+    @telefone_celular = "11999999999"
     @assunto = Faker::ChuckNorris.fact
   
     @alerta_sucesso_lead_texto = "Recebemos as suas informações. Muito obrigado!"
