@@ -35,10 +35,10 @@ Before "@dados_usuario" do
     @email_carrinho = "lucas.kimura@totvs.com.br"
   
     # Validação das mensagens
-    @mensagem_erro_cpf_modal = "CPF NÃO É VÁLIDO!"
-    @mensagem_erro_cnpj_modal = "CNPJ NÃO É VÁLIDO!"
+    @mensagem_erro_cpf_modal = "CPF não é válido!"
+    @mensagem_erro_cnpj_modal = "CNPJ não é válido!"
   
-    @mensagem_cpf_cadastrado = "CPF JÁ ESTÁ CADASTRADO!"
+    @mensagem_cpf_cadastrado = "CPF já está cadastrado!"
     @mensagem_codigo_invalido = "CÓDIGO INVÁLIDO"
     @mensagem_cadastro_sucesso = "Obrigado por registrar-se com TOTVS Store."
 end
