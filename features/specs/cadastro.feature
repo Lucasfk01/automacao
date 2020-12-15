@@ -71,7 +71,7 @@ Cenário: Tentativa de cadastro com CNPJ inválido
     Mas tenta finalizar o cadastro com um cnpj inválido
     Então será exibido um alerta de erro para o cnpj 
 
-@teste_cadastro @dados_usuario @teste_regressao 
+@teste_cadastro9 @dados_usuario @teste_regressao 
 Cenário: Tentativa de cadastro com inscrição estadual inválida
     Mas tenta finalizar o cadastro com uma inscrição estadual inválida
     Então será exibido um alerta de erro para a inscrição estadual
